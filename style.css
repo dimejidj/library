@@ -1,7 +1,16 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   background-color: wheat;
+  margin: 0;
+  height: 100vh;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .head {
@@ -39,7 +48,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 400px;
-
   gap: 5px;
 }
 
@@ -63,11 +71,6 @@ body {
   padding-bottom: 10px;
   border-bottom: rgb(113, 1, 1) dotted 2px;
 }
-
-/* .library {
-  /* display: flex; 
-  flex-direction: column; 
-} */
 
 .new-book-details {
   display: flex;
@@ -107,4 +110,12 @@ body {
 button:hover {
   cursor: pointer;
   border: rgb(131, 131, 131) solid 3px;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: auto;
+  font-size: 18px;
+  padding-top: 10px;
 }
