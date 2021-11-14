@@ -119,3 +119,8 @@ button:hover {
   font-size: 18px;
   padding-top: 10px;
 }
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
