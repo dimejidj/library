@@ -7,11 +7,23 @@ const amountOfPages = document.getElementById("pages");
 let bookRead = document.querySelector(".input-radio");
 let localStorageLoaded = false;
 
-function Book(name, author, pages, read) {
-  this.name = name;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(name, author, pages, read) {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  readUpdated() {
+    if (this.read == "Read") {
+      this.read = "Not Read";
+    } else if (this.read == "Not Read") {
+      this.read = "Read";
+    }
+    updateDisplay();
+    updateStorage();
+  }
 }
 
 let myLibrary = [];
@@ -19,17 +31,6 @@ let myLibrary = [];
 function addBookToLibrary(books) {
   myLibrary.push(books);
 }
-
-Book.prototype.readUpdated = function () {
-  if (this.read == "Read") {
-    this.read = "Not Read";
-  } else if (this.read == "Not Read") {
-    this.read = "Read";
-  }
-  updateDisplay();
-  updateStorage();
-};
-
 function updateStorage() {
   let currentStorageLib = localStorage.getItem("myLibrary");
   if (!currentStorageLib) {
